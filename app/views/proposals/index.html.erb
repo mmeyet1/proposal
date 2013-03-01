@@ -1,0 +1,33 @@
+<h1>List of Proposals</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>PI Name</th>
+    <th>PI Institute</th>
+    <th>PI Email</th>
+    <th>Instrument</th>
+    <th>Cycle</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @proposals.each do |proposal| %>
+  <tr>
+    <td><%= proposal.title %></td>
+    <td><%= proposal.pi_name %></td>
+    <td><%= proposal.pi_inst %></td>
+    <td><%= proposal.pi_email %></td>
+    <td><%= proposal.instrument %></td>
+    <td><%= proposal.cycle %></td>
+    <td><%= link_to 'Show', proposal %></td>
+    <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
+    <td><%= link_to 'Destroy', proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Proposal', new_proposal_path %>

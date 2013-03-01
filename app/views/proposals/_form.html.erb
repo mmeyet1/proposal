@@ -1,0 +1,45 @@
+<%= simple_form_for(@proposal) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :pi_name %>
+    <%= f.input :pi_inst %>
+    <%= f.input :pi_country %>
+    <%= f.input :pi_email %>
+    <%= f.input :coi_name %>
+    <%= f.input :coi_inst %>
+    <%= f.input :coi_country %>
+    <%= f.input :coi_email %>
+    <%= f.input :prop_category %>
+    <%= f.input :sci_category %>
+    <%= f.input :keyword1 %>
+    <%= f.input :keyword2 %>
+    <%= f.input :keyword3 %>
+    <%= f.input :instrument %>
+    <%= f.input :prop_period %>
+    <%= f.input :prime_orb %>
+    <%= f.input :par_orb %>
+    <%= f.input :cycle %>
+    <%= f.input :abstract %>
+    <%= f.input :target %>
+    <%= f.input :ra %>
+    <%= f.input :dec %>
+    <%= f.input :magnitude %>
+    <%= f.input :observe_target %>
+    <%= f.input :config %>
+    <%= f.input :flags %>
+    <%= f.input :observe_orb %>
+    <%= f.input :sci_justify %>
+    <%= f.input :description %>
+    <%= f.input :special_req %>
+    <%= f.input :coord_obs %>
+    <%= f.input :justify_dup %>
+    <%= f.input :past_usage %>
+    <%= f.input :prop_pdf %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
