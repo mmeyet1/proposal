@@ -1,45 +1,42 @@
 <%= simple_form_for(@proposal) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :pi_name %>
-    <%= f.input :pi_inst %>
-    <%= f.input :pi_country %>
-    <%= f.input :pi_email %>
-    <%= f.input :coi_name %>
-    <%= f.input :coi_inst %>
-    <%= f.input :coi_country %>
-    <%= f.input :coi_email %>
-    <%= f.input :prop_category %>
-    <%= f.input :sci_category %>
-    <%= f.input :keyword1 %>
-    <%= f.input :keyword2 %>
+ 
+    <%= f.input :title, :label => "Title", :input_html => {:style => 'width: 650px'} %>
+    <%= f.input :pi_name, :label => "Principle Investigator Name", :input_html => {:style => 'width: 425px'} %>
+    <%= f.input :pi_inst, :label => "Institute", :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :pi_email, :label => "Email" %>
+    <%= f.input :coi_name, :label => "Co-Investigator Name", :input_html => {:style => 'width: 425px'} %>
+    <%= f.input :coi_inst, :label => "Institute", :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :coi_email, :label => "Email" %>
+    <%= f.input :prop_category, :label => "Proposal Category", :collection => [ "GO","SNAP","AR","GO/DD"], :prompt => "none selected",  :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :sci_category, :label => "Scientific Category", :collection => [ "AGN/QUASARS","COOL STARS","COSMOLOGY","DEBRIS DISKS","EXTRA-SOLAR PLANETS","HOT STARS","ISM AND CIRCUMSTELLAR MATTERISM IN EXTERNAL GALAXIES","QUASAR ABSORPTION LINES AND IGM","RESOLVED STAR FORMATION","RESOLVED STELLAR POPULATIONS","SOLAR SYSTEM","UNRESOLVED STAR FORMATION","UNRESOLVED STELLAR POPULATIONS AND GALAXY STRUCTURE"], :prompt => "none selected" %>
+    <%= f.input :keyword1, :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :keyword2, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :keyword3 %>
-    <%= f.input :instrument %>
-    <%= f.input :prop_period %>
-    <%= f.input :prime_orb %>
-    <%= f.input :par_orb %>
-    <%= f.input :cycle %>
-    <%= f.input :abstract %>
-    <%= f.input :target %>
-    <%= f.input :ra %>
-    <%= f.input :dec %>
-    <%= f.input :magnitude %>
-    <%= f.input :observe_target %>
-    <%= f.input :config %>
-    <%= f.input :flags %>
-    <%= f.input :observe_orb %>
-    <%= f.input :sci_justify %>
-    <%= f.input :description %>
-    <%= f.input :special_req %>
-    <%= f.input :coord_obs %>
-    <%= f.input :justify_dup %>
-    <%= f.input :past_usage %>
-    <%= f.input :prop_pdf %>
-  </div>
+    <%= f.input :instrument, :label => "Instrument", :collection => [ "ACS", "COS", "FGS", "STIS", "WFC3"], :prompt => "none selected" %>
+    <%= f.input :prop_period, :label => "Proprietary Period", :collection => 1..12, :prompt => "none selected" %>
+    <%= f.input :prime_orb, :label => "Prime", :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :par_orb, :label => "Parallel" %>
+    <%= f.input :cycle, :label => "Cycle", :collection => 21..23, :prompt => "none selected" %>
+    <%= f.input :abstract, :label => "Abstract", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
+    <%= f.input :target, :label => "*Target", :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :ra, :label => "Right Ascension", :placeholder => "HH:MM:SS", :input_html => {:style => 'width: 150px'}, :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :dec, :label => "Declination", :placeholder => "DD:HH:MM", :input_html => {:style => 'width: 150px'}, :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :magnitude, :label => "Magnitude", :input_html => {:style => 'width: 150px'} %>
+    <%= f.input :observe_target, :label => "Target", :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :flags, :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :observe_orb, :label => "Orbits" %>
+    <%= f.input :config, :label => "Instrument Setup (Config, Mode, Spectral Element)", :input_html => {:style => 'width: 425px'} %>
+    <%= f.input :sci_justify, :label => "Scientific Justification (maximum of 2000 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
+    <%= f.input :description, :label => "Description of Observations (maximum of 1500 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
+    <%= f.input :special_req , :label => "Special Requirements (maximum of 500 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
+    <%= f.input :coord_obs, :label => "Coordinated Observations (maximum of 500 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
+    <%= f.input :justify_dup, :label => "Justify Duplications (maximum of 500 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
+    <%= f.input :past_usage, :label => "Past HST Usage (maximum of 500 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
 
-  <div class="form-actions">
+
+ 
     <%= f.button :submit %>
-  </div>
+ 
 <% end %>
