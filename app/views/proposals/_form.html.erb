@@ -22,15 +22,16 @@
     <%= f.input :par_orb, :label => "Parallel" %>
     <%= f.input :cycle, :label => "Cycle", :collection => 21..23, :prompt => "none selected" %>
     <%= f.input :abstract, :label => "Abstract", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
-   
-    <%= f.input :target, :label => "Target", :wrapper_html=> {:style => 'float:left'} %>
-    <%= f.input :ra, :label => "Right Ascension", :placeholder => "HH:MM:SS", :input_html => {:style => 'width: 150px'}, :wrapper_html=> {:style => 'float:left'} %>
-    <%= f.input :dec, :label => "Declination", :placeholder => "DD:HH:MM", :input_html => {:style => 'width: 150px'}, :wrapper_html=> {:style => 'float:left'} %>
-    <%= f.input :magnitude, :label => "Magnitude", :input_html => {:style => 'width: 150px'} %>
-    <%= f.input :observe_target, :label => "Target", :wrapper_html=> {:style => 'float:left'} %>
+    <p>Target Summary</p>
+    <%= f.input :target, :label => "Target", :input_html => {:style => 'width: 235px'}, :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :ra, :label => "Right Ascension", :placeholder => "HH:MM:SS", :input_html => {:style => 'width: 135px'}, :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :dec, :label => "Declination", :placeholder => "DD:HH:MM", :input_html => {:style => 'width: 135px'}, :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :magnitude, :label => "Magnitude", :input_html => {:style => 'width: 100px'} %>
+    <p>Observing Summary</p>
+    <%= f.input :observe_target, :label => "Target", :input_html => {:style => 'width: 235px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :flags, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :observe_orb, :label => "Orbits" %>
-    <%= f.input :config, :label => "Instrument Setup (Config, Mode, Spectral Element)", :input_html => {:style => 'width: 425px'} %>
+    <%= f.input :config, :label => "Instrument Setup (Config, Mode, Spectral Element)", :input_html => {:style => 'width: 650px'} %>
     <%= f.input :sci_justify, :label => "Scientific Justification (maximum of 2000 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
     <%= f.input :description, :label => "Description of Observations (maximum of 1500 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
     <%= f.input :special_req , :label => "Special Requirements (maximum of 500 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
