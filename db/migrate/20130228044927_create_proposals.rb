@@ -4,11 +4,9 @@ class CreateProposals < ActiveRecord::Migration
       t.string :title
       t.string :pi_name
       t.string :pi_inst
-      t.string :pi_country
       t.string :pi_email
       t.string :coi_name
       t.string :coi_inst
-      t.string :coi_country
       t.string :coi_email
       t.string :prop_category
       t.string :sci_category
@@ -35,7 +33,6 @@ class CreateProposals < ActiveRecord::Migration
       t.text :coord_obs
       t.text :justify_dup
       t.text :past_usage
-      t.binary :prop_pdf
 
       t.timestamps
     end

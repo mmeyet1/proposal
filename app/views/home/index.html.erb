@@ -1,4 +1,6 @@
 <h3>Home</h3>
 <% @users.each do |user| %>
   <p>User: <%=link_to user.name, user %></p>
+  
+  <%= link_to 'Create New Proposal', new_proposal_path %>
 <% end %>
