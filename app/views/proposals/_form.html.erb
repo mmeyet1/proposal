@@ -3,12 +3,14 @@
 
  
     <%= f.input :title, :label => "Title", :input_html => {:style => 'width: 650px'} %>
-    <%= f.input :pi_name, :label => "Principle Investigator Name", :input_html => {:style => 'width: 425px'} %>
-    <%= f.input :pi_inst, :label => "Institute", :wrapper_html=> {:style => 'float:left'} %>
-    <%= f.input :pi_email, :label => "Email" %>
-    <%= f.input :coi_name, :label => "Co-Investigator Name", :input_html => {:style => 'width: 425px'} %>
-    <%= f.input :coi_inst, :label => "Institute", :wrapper_html=> {:style => 'float:left'} %>
-    <%= f.input :coi_email, :label => "Email" %>
+    <%= f.input :pi_name, :label => "Principle Investigator Name", :input_html => {:style => 'width: 405px'}, :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :pi_email, :label => "Email", :input_html => {:style => 'width: 230px'} %>
+    <%= f.input :pi_inst, :label => "Institute", :input_html => {:style => 'width: 405px'} %>
+
+    <%= f.input :coi_name, :label => "Co-Investigator Name", :input_html => {:style => 'width: 405px'}, :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :coi_email, :label => "Email", :input_html => {:style => 'width: 230px'} %>
+    <%= f.input :coi_inst, :label => "Institute", :input_html => {:style => 'width: 405px'} %>
+    
     <%= f.input :prop_category, :label => "Proposal Category", :collection => [ "GO","SNAP","AR","GO/DD"], :prompt => "none selected",  :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :sci_category, :label => "Scientific Category", :collection => [ "AGN/QUASARS","COOL STARS","COSMOLOGY","DEBRIS DISKS","EXTRA-SOLAR PLANETS","HOT STARS","ISM AND CIRCUMSTELLAR MATTERISM IN EXTERNAL GALAXIES","QUASAR ABSORPTION LINES AND IGM","RESOLVED STAR FORMATION","RESOLVED STELLAR POPULATIONS","SOLAR SYSTEM","UNRESOLVED STAR FORMATION","UNRESOLVED STELLAR POPULATIONS AND GALAXY STRUCTURE"], :prompt => "none selected" %>
     <%= f.input :keyword1, :wrapper_html=> {:style => 'float:left'} %>
@@ -20,7 +22,8 @@
     <%= f.input :par_orb, :label => "Parallel" %>
     <%= f.input :cycle, :label => "Cycle", :collection => 21..23, :prompt => "none selected" %>
     <%= f.input :abstract, :label => "Abstract", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
-    <%= f.input :target, :label => "*Target", :wrapper_html=> {:style => 'float:left'} %>
+   
+    <%= f.input :target, :label => "Target", :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :ra, :label => "Right Ascension", :placeholder => "HH:MM:SS", :input_html => {:style => 'width: 150px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :dec, :label => "Declination", :placeholder => "DD:HH:MM", :input_html => {:style => 'width: 150px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :magnitude, :label => "Magnitude", :input_html => {:style => 'width: 150px'} %>
@@ -37,6 +40,6 @@
 
 
  
-    <%= f.button :submit %>
+    <%= f.submit 'Submit Proposal', :class => 'btn btn-warning' %>
  
 <% end %>

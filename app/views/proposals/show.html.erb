@@ -6,41 +6,41 @@
 </p>
 
 <p>
-  <b>Pi name:</b>
+  <b>PI Name:</b>
   <%= @proposal.pi_name %>
 </p>
 
 <p>
-  <b>Pi inst:</b>
+  <b>PI Institute:</b>
   <%= @proposal.pi_inst %>
 </p>
 
 <p>
-  <b>Pi email:</b>
+  <b>PI Email:</b>
   <%= @proposal.pi_email %>
 </p>
 
 <p>
-  <b>Coi name:</b>
+  <b>Co-I Name:</b>
   <%= @proposal.coi_name %>
 </p>
 
 <p>
-  <b>Coi inst:</b>
+  <b>Co-I Institute:</b>
   <%= @proposal.coi_inst %>
 </p>
 <p>
-  <b>Coi email:</b>
+  <b>Co-I Email:</b>
   <%= @proposal.coi_email %>
 </p>
 
 <p>
-  <b>Prop category:</b>
+  <b>Proposal Category:</b>
   <%= @proposal.prop_category %>
 </p>
 
 <p>
-  <b>Sci category:</b>
+  <b>Scientific Category:</b>
   <%= @proposal.sci_category %>
 </p>
 
@@ -65,17 +65,17 @@
 </p>
 
 <p>
-  <b>Prop period:</b>
+  <b>Proprietary Period:</b>
   <%= @proposal.prop_period %>
 </p>
 
 <p>
-  <b>Prime orb:</b>
+  <b>Prime Orbit(s):</b>
   <%= @proposal.prime_orb %>
 </p>
 
 <p>
-  <b>Par orb:</b>
+  <b>Parallel Orbit(s):</b>
   <%= @proposal.par_orb %>
 </p>
 
@@ -95,12 +95,12 @@
 </p>
 
 <p>
-  <b>Ra:</b>
+  <b>Right Ascension:</b>
   <%= @proposal.ra %>
 </p>
 
 <p>
-  <b>Dec:</b>
+  <b>Declination:</b>
   <%= @proposal.dec %>
 </p>
 
@@ -110,12 +110,12 @@
 </p>
 
 <p>
-  <b>Observe target:</b>
+  <b>Observe Target:</b>
   <%= @proposal.observe_target %>
 </p>
 
 <p>
-  <b>Config:</b>
+  <b>Instrument Setup (Config):</b>
   <%= @proposal.config %>
 </p>
 
@@ -125,40 +125,40 @@
 </p>
 
 <p>
-  <b>Observe orb:</b>
+  <b>Observe Orbit(s):</b>
   <%= @proposal.observe_orb %>
 </p>
 
 <p>
-  <b>Sci justify:</b>
+  <b>Scientific Justification:</b>
   <%= @proposal.sci_justify %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>Description of Observations:</b>
   <%= @proposal.description %>
 </p>
 
 <p>
-  <b>Special req:</b>
+  <b>Special Requirements:</b>
   <%= @proposal.special_req %>
 </p>
 
 <p>
-  <b>Coord obs:</b>
+  <b>Coordinated Observations:</b>
   <%= @proposal.coord_obs %>
 </p>
 
 <p>
-  <b>Justify dup:</b>
+  <b>Justify Duplications:</b>
   <%= @proposal.justify_dup %>
 </p>
 
 <p>
-  <b>Past usage:</b>
+  <b>Past HST Usage:</b>
   <%= @proposal.past_usage %>
 </p>
 
 
-<%= link_to 'Edit', edit_proposal_path(@proposal) %> |
-<%= link_to 'Back', proposals_path %>
+<%= link_to 'Edit', edit_proposal_path(@proposal), :class => 'btn btn-warning' %> |
+<%= link_to 'Back', proposals_path, :class => 'btn btn-warning' %>

@@ -1,6 +1,5 @@
-<h3>Home</h3>
 <% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+  <p><h3>Welcome, <%=link_to user.name, user %> !</h3></p>
   
-  <%= link_to 'Create New Proposal', new_proposal_path %>
+  <%= link_to 'Create New Proposal', new_proposal_path, :class => 'btn btn-warning' %>
 <% end %>
