@@ -6,7 +6,9 @@
     </li>
   <% else %>
     <li>
-    <%= link_to 'Login', new_user_session_path %>
+    <center>Welcome, Guest.  <br> To submit a Proposal, 
+    	<br>Please <%= link_to 'login', new_user_session_path %>
+    or <%=link_to 'register.', new_user_registration_path %></center>
     </li>
   <% end %>
   <% if user_signed_in? %>
@@ -16,12 +18,12 @@
     <% if current_user.has_role? :admin %>
       <li>
       <%= link_to 'Admin', users_path %>
+      </li> 
+      <li>
+      <%= link_to 'Proposal List', proposals_path %>
       </li>
     <% end %>
-  <% else %>
-    <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    </li>
+    
   <% end %>
-  <li> <%= link_to 'Proposal List', proposals_path %></li>
+ 
 </ul>

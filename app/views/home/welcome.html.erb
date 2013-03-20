@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+	
+	<h3>Welcome, <%= current_user.name %></h3>
+
+	<%= link_to 'Create New Proposal', new_proposal_path, :class => 'btn btn-warning' %>
+<% end %>
