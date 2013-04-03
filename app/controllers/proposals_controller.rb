@@ -2,7 +2,7 @@ class ProposalsController < ApplicationController
   # GET /proposals
   # GET /proposals.json
   def index
-    @proposals = Proposal.all
+    @proposals = Proposal.paginate(:per_page => 3, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

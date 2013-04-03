@@ -1,4 +1,6 @@
-<%= link_to "STScI Proposal Submission System", root_path, :class => 'brand' %>
+<img src="/stsci.jpg" alt="stsci feed" align="left" /></br>
+<%= link_to "Proposal Submission System", root_path, :class => 'brand', :color => 'red' %>
+    
 <ul class="nav">
   <% if user_signed_in? %>
     <li>
@@ -15,12 +17,12 @@
     <li>
     <%= link_to 'Edit account', edit_user_registration_path %>
     </li>
-    <% if current_user.has_role? :admin %>
-      <li>
-      <%= link_to 'Admin', users_path %>
-      </li> 
+    <% if current_user.has_role? :admin %> 
       <li>
       <%= link_to 'Proposal List', proposals_path %>
+      </li>
+      <li>
+      <%= link_to 'Registered Users', users_path %>
       </li>
     <% end %>
     

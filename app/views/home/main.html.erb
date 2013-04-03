@@ -2,5 +2,12 @@
 
 <p>STScI solicits proposals for HST Observing, Archival & Theoretical  
 <br>Research. Full details are made available through two documents, 
-<br>the <%=link_to "Call for Proposals", cp_path %> and the <%= link_to "HST Primer.", primer_path %></br>
+<br>the <u><%=link_to "Call for Proposals", cp_path %></u> and the <u><%= link_to "HST Primer.", primer_path %></u></br>
+<p>
+	<% if user_signed_in? %>
+	
+	<h4>Welcome, <%= current_user.name %></h4>
 
+	<%= link_to 'Create New Proposal', new_proposal_path, :class => 'btn btn-warning' %>
+<% end %>
+</p>
