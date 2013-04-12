@@ -10,7 +10,7 @@
     <%= f.input :coi_name, :label => "Co-Investigator Name", :input_html => {:style => 'width: 405px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :coi_email, :label => "Email", :input_html => {:style => 'width: 230px'} %>
     <%= f.input :coi_inst, :label => "Institute", :input_html => {:style => 'width: 405px'} %>
-    <%= f.input :prop_category, :label => "Proposal Category", :collection => [ "GO","SNAP","AR","GO/DD"], :prompt => "none selected", :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.select :prop_category, :label => "Proposal Category", :collection => [ "GO","SNAP","AR","GO/DD"], :prompt => "none selected", :multiple => true, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :sci_category, :label => "Scientific Category", :collection => [ "AGN/QUASARS","COOL STARS","COSMOLOGY","DEBRIS DISKS","EXTRA-SOLAR PLANETS","HOT STARS","ISM AND CIRCUMSTELLAR MATTERISM IN EXTERNAL GALAXIES","QUASAR ABSORPTION LINES AND IGM","RESOLVED STAR FORMATION","RESOLVED STELLAR POPULATIONS","SOLAR SYSTEM","UNRESOLVED STAR FORMATION","UNRESOLVED STELLAR POPULATIONS AND GALAXY STRUCTURE"], :prompt => "none selected" %>
     <%= f.input :keyword1, :collection => ["AGN Physics","Asteroids","Astrometry","Atmosphere and Chromospheres","Binaries","Black Holes","Brown Dwarfs","Comets","Dark Matter","Disks","Dust","Evolution","Galatic Bulge","Galaxies","Gamma-Ray Bursts","Globular Cluster Systems","HII Region","Hubble Deep Fields","Jets","Magellanic Clouds","Molecular Clouds","Novae","Planets","Quasars","Stars","Stellar Activity","Supernovae","Survey","White Dwarfs"], :prompt => "none selected", :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :keyword2, :collection => ["AGN Physics","Asteroids","Astrometry","Atmosphere and Chromospheres","Binaries","Black Holes","Brown Dwarfs","Comets","Dark Matter","Disks","Dust","Evolution","Galatic Bulge","Galaxies","Gamma-Ray Bursts","Globular Cluster Systems","HII Region","Hubble Deep Fields""Jets","Magellanic Clouds","Molecular Clouds","Novae","Planets","Quasars","Stars","Stellar Activity","Supernovae","Survey","White Dwarfs"], :prompt => "none selected", :wrapper_html=> {:style => 'float:left'} %>   
@@ -37,7 +37,7 @@
     <%= f.input :coord_obs, :label => "Coordinated Observations (maximum of 500 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
     <%= f.input :justify_dup, :label => "Justify Duplications (maximum of 500 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
     <%= f.input :past_usage, :label => "Past HST Usage (maximum of 500 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
-
+    
     <%= f.submit 'Submit Proposal', :class => 'btn btn-warning' %>
  
 <% end %>
