@@ -1,9 +1,22 @@
 <h3>Hubble Space Telescope Proposing Overview</h3>
 
-<p>STScI solicits proposals for HST Observing, Archival & Theoretical  
-<br>Research. Full details are made available through two documents, 
-<br>the <u><%=link_to "Call for Proposals", cp_path %></u> and the <u><%= link_to "HST Primer.", primer_path %></u></br>
+<p>NASA and The Space Telescope Science Institute (STScI) are pleased to announce the 
+<br>Cycle 21 Call for Proposals for Hubble Space Telescope (HST) Observations and funding
+<br>for Archival Research and Theoretical Research programs.  Participation in this program
+<br>is open to all categories of organizations, both domestic and foreign, including
+<br>educational institutions, profit and nonprofit organizations, NASA Centers, and other
+<br>Government agencies.
+<br>
+<p>Full details are made available through two documents, the 
+	<u><%=link_to "Call for Proposals", cp_path %></u>, which 
+	<br>describes the policies and procedures for submitting a HST Phase I proposal and the 
+	<br><u><%= link_to "HST Primer", primer_path %></u>,which provides an introductory 
+	overview of the Hubble Space Telescope 
+	<br>and explains how to calculate the appropriate number of orbits for an observing proposal. 
+	</br>
 <p>
+<p>Questions can be addressed to the STScI Help Desk 
+	(email: help@stsci.edu; phone: 410-338-1082).</p>
 	<% if user_signed_in? %>
 	
 	<h4>Welcome, <%= current_user.name %></h4>
