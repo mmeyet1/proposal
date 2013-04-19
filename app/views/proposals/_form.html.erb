@@ -5,11 +5,12 @@
     <%= f.input :title, :label => "Title", :input_html => {:style => 'width: 650px'} %>
     <%= f.input :pi_name, :label => "Principle Investigator Name", :input_html => {:style => 'width: 405px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :pi_email, :label => "Email", :input_html => {:style => 'width: 230px'} %>
-    <%= f.input :pi_inst, :label => "Institute", :input_html => {:style => 'width: 405px'} %>
-
+    <%= f.input :pi_inst, :label => "Institute", :input_html => {:style => 'width: 405px'}, :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :pi_country, :label => "Country", :input_html => {:style => 'width: 230px'}, :prompt => "United States" %>
     <%= f.input :coi_name, :label => "Co-Investigator Name", :input_html => {:style => 'width: 405px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :coi_email, :label => "Email", :input_html => {:style => 'width: 230px'} %>
-    <%= f.input :coi_inst, :label => "Institute", :input_html => {:style => 'width: 405px'} %>
+    <%= f.input :coi_inst, :label => "Institute", :input_html => {:style => 'width: 405px'}, :wrapper_html=> {:style => 'float:left'} %>
+    <%= f.input :coi_country, :label => "Country", :input_html => {:style => 'width: 230px'}, :prompt => "United States" %>
     <%= f.input :prop_category, :label => "Proposal Category", :collection => [ "GO","SNAP","AR","GO/DD"], :prompt => "none selected", :multiple => true, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :sci_category, :label => "Scientific Category", :collection => [ "AGN/QUASARS","COOL STARS","COSMOLOGY","DEBRIS DISKS","EXTRA-SOLAR PLANETS","HOT STARS","ISM AND CIRCUMSTELLAR MATTERISM IN EXTERNAL GALAXIES","QUASAR ABSORPTION LINES AND IGM","RESOLVED STAR FORMATION","RESOLVED STELLAR POPULATIONS","SOLAR SYSTEM","UNRESOLVED STAR FORMATION","UNRESOLVED STELLAR POPULATIONS AND GALAXY STRUCTURE"], :prompt => "none selected" %>
     <%= f.label :keywords %>

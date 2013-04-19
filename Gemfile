@@ -27,3 +27,4 @@ gem "heroku"
 gem 'pg'
 gem 'will_paginate', '~> 3.0'
 gem 'multi-select-rails'
+gem 'country_select'
