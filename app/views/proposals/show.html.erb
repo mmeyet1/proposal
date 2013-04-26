@@ -1,153 +1,168 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @proposal.title %>
-</p>
-
-<p>
-  <b>PI Name:</b>
-  <%= @proposal.pi_name %>
-</p>
-
-<p>
-  <b>PI Institute:</b>
-  <%= @proposal.pi_inst %>
-</p>
-
-<p>
-  <b>PI Email:</b>
-  <%= @proposal.pi_email %>
-</p>
-
-<p>
-  <b>Co-I Name:</b>
-  <%= @proposal.coi_name %>
-</p>
-
-<p>
-  <b>Co-I Institute:</b>
-  <%= @proposal.coi_inst %>
-</p>
-<p>
-  <b>Co-I Email:</b>
-  <%= @proposal.coi_email %>
-</p>
-
-<p>
-  <b>Proposal Category:</b>
-  <%= @proposal.prop_category %>
-</p>
-
-<p>
-  <b>Scientific Category:</b>
-  <%= @proposal.sci_category %>
-</p>
-
-<p>
-  <b>Keywords:</b>
-  <%= @proposal.keyword1 %>
-</p>
-
-<p>
-  <b>Instrument:</b>
-  <%= @proposal.instrument %>
-</p>
-
-<p>
-  <b>Proprietary Period:</b>
-  <%= @proposal.prop_period %>
-</p>
-
-<p>
-  <b>Prime Orbit(s):</b>
-  <%= @proposal.prime_orb %>
-</p>
-
-<p>
-  <b>Parallel Orbit(s):</b>
-  <%= @proposal.par_orb %>
-</p>
-
-<p>
-  <b>Cycle:</b>
-  <%= @proposal.cycle %>
-</p>
-
-<p>
-  <b>Abstract:</b>
-  <%= @proposal.abstract %>
-</p>
-
-<p>
-  <b>Target:</b>
-  <%= @proposal.target %>
-</p>
-
-<p>
-  <b>Right Ascension:</b>
-  <%= @proposal.ra %>
-</p>
-
-<p>
-  <b>Declination:</b>
-  <%= @proposal.dec %>
-</p>
-
-<p>
-  <b>Magnitude:</b>
-  <%= @proposal.magnitude %>
-</p>
-
-<p>
-  <b>Observe Target:</b>
-  <%= @proposal.observe_target %>
-</p>
-
-<p>
-  <b>Instrument Setup (Config):</b>
-  <%= @proposal.config %>
-</p>
-
-<p>
-  <b>Flags:</b>
-  <%= @proposal.flags %>
-</p>
-
-<p>
-  <b>Observe Orbit(s):</b>
-  <%= @proposal.observe_orb %>
-</p>
-
-<p>
-  <b>Scientific Justification:</b>
-  <%= @proposal.sci_justify %>
-</p>
-
-<p>
-  <b>Description of Observations:</b>
-  <%= @proposal.description %>
-</p>
-
-<p>
-  <b>Special Requirements:</b>
-  <%= @proposal.special_req %>
-</p>
-
-<p>
-  <b>Coordinated Observations:</b>
-  <%= @proposal.coord_obs %>
-</p>
-
-<p>
-  <b>Justify Duplications:</b>
-  <%= @proposal.justify_dup %>
-</p>
-
-<p>
-  <b>Past HST Usage:</b>
-  <%= @proposal.past_usage %>
-</p>
+	<h2><%= @proposal.title %></h2>
+  	
+<table>
+  	<tr>
+  		<td>Principle Investigator:&nbsp;</td>
+  		<td><%= @proposal.pi_name %></td>
+  	</tr>
+  	<tr>
+  		<td align='right'>Institution:&nbsp;</td>
+  		<td><%= @proposal.pi_inst %></td>
+  	</tr>
+  	<tr>
+  		<td align='right'>Country:&nbsp;</td>
+  		<td><%= @proposal.pi_country %></td>
+  	</tr>
+  	<tr>
+  		<td align='right'>Electronic Mail:&nbsp;</td>
+        <td><%= @proposal.pi_email %></td>
+  	</tr>
+  	<tr>
+  		<td align='right'>Proposal Category:&nbsp;</td>
+  		<td><%= @proposal.prop_category %></td>
+    </tr>
+  	<tr>
+  		<td align='right'>Scientific Category:&nbsp;</td>
+  		<td><%= @proposal.sci_category %></td>
+  	</tr>
+  	<tr>
+  		<td align='right'>Scientific Keywords:&nbsp;</td>
+  		<td><%= @proposal.keyword1 %></td>
+  	</tr>
+  	<tr>
+  		<td align='right'>Instrument:&nbsp;</td>
+  		<td><%= @proposal.instrument %></td>
+  	</tr>
+  	<tr>
+  		<td align='right'>Proprietary Period:&nbsp;</td>
+  		<td><%= @proposal.prop_period %></td>
+  	</tr>
+</table>
+<table>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+  	<tr>
+  		<td>Orbit Request</td>
+  		<td width='50'>&nbsp;</td>
+  		<td width='250'>Prime</td>
+  		<td width='250'>Parallel</td>
+  	</tr>
+  	<tr>
+  		<td>Cycle <%= @proposal.cycle %></td>
+  		<td width='50'></td>
+  		<td width='250'><%= @proposal.prime_orb %></td>
+  		<td width='250'><%= @proposal.par_orb %></td>
+  	</tr>
+  	<tr>
+  		<td>&nbsp;</td>
+  	</tr>
+</table>
+<table>
+  	<tr>
+  		<td><font size="4"><b>Abstract</b></font></td>
+  	</tr>
+  	<tr>
+  		<td><%= @proposal.abstract %></td>
+  	</tr>
+  	<tr>
+  		<td>&nbsp;</td>
+  	</tr>
+</table>
+<h4>Co-Investigators:</h4>
+<table>
+	<tr>
+		<th width='250' align='left'>Co-Investigator</th>
+		<th width='250' align='left'>Institution</th>
+		<th width='250' align='left'>Electronic Mail</th>
+		<th width='250' align='left'>Country</th>
+	</tr>  	
+  	<tr>
+  		<td width='250' align='left'><%= @proposal.coi_name %></td>
+  		<td width='250' align='left'><%= @proposal.coi_inst %></td>
+  		<td width='250' align='left'><%= @proposal.coi_email %></td>
+  		<td width='250' align='left'><%= @proposal.coi_country %></td>
+  	</tr>
+  	<tr>
+  		<td>&nbsp;</td>
+  	</tr>
+</table>
+<h4>Target Summary:</h4>
+<table>
+	<tr>
+		<th width='250' align='left'>Target</th>
+		<th width='250' align='left'>RA</th>
+		<th width='250' align='left'>Dec</th>
+		<th width='250' align='left'>Magnitude</th>
+	</tr>   
+    <tr>
+  		<td width='250' align='left'><%= @proposal.target %></td>
+		<td width='250' align='left'><%= @proposal.ra %></td>
+		<td width='250' align='left'><%= @proposal.dec %></td>
+		<td width='250' align='left'><%= @proposal.magnitude %></td>
+  	</tr>
+  	<tr>
+  		<td>&nbsp;</td>
+  	</tr>
+</table>
+<h4>Observing Summary:</h4>
+<table>
+	<tr>
+		<th width='250' align='left'>Target</th>
+		<th width='250' align='left'>Config Mode and Spectral Elements</th>
+		<th width='250' align='left'>Flags</th>
+		<th width='250' align='left'>Orbits</th>
+	</tr>
+	<tr>
+		<td width='250' align='left'><%= @proposal.observe_target %>
+		<td width='250' align='left'><%= @proposal.config %></td>
+		<td width='250' align='left'><%= @proposal.flags %>
+		<td width='250' align='left'><%= @proposal.observe_orb %>
+	</tr>
+</table>
+<h4></h4>
+<table>
+	<tr>
+		<td><h4>Scientific Justification</h4></td>
+    </tr>
+    <tr>
+    	<td><%= @proposal.sci_justify %></td>
+    </tr>
+    <tr>	
+  		<td><h4>Description of Observations</h4></td>
+  	</tr>
+  	<tr>
+		<td><%= @proposal.description %></td>
+	</tr>
+    <tr>
+  		<td><h4>Special Requirements</h4></td>
+  	</tr>
+  	<tr>
+		<td><%= @proposal.special_req %></td>
+	</tr>
+  	<tr>
+  		<td><h4>Coordinated Observations</h4></td>
+  	</tr>
+  	<tr>
+		<td><%= @proposal.coord_obs %></td>
+	</tr>
+  	<tr>
+  		<td><h4>Justify Duplications</h4></td>
+  	</tr>
+  	<tr>
+		<td><%= @proposal.justify_dup %></td>
+	</tr>
+  	<tr>
+  		<td><h4>Past HST Usage</h4></td>
+  	</tr>
+  	<tr>
+		<td><%= @proposal.past_usage %></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
 
 
 <%= link_to 'Edit', edit_proposal_path(@proposal), :class => 'btn btn-warning' %> |
