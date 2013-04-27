@@ -34,4 +34,12 @@ class Proposal < ActiveRecord::Base
     :tokenizer => lambda { |str| str.scan(/\w+/) },
     :too_long => "Please limit your word count to %{count} words"
   }
+  
+  def self.search(search)
+    if search
+      where('instrument LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
 end

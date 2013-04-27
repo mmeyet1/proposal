@@ -27,5 +27,9 @@
   <% end %>
   </tbody>
 </table>
+<%= form_tag users_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search by Name", :name => nil, class: 'btn btn-mini btn-primary' %>
+<% end %>
 <%= will_paginate @users%>
 </div>

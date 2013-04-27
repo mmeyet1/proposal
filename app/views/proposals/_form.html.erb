@@ -1,7 +1,6 @@
 <%= simple_form_for(@proposal) do |f| %>
   <%= f.error_notification %>
 
- 
     <%= f.input :title, :label => "Title", :input_html => {:style => 'width: 650px'} %>
     <%= f.input :pi_name, :label => "Principle Investigator Name", :input_html => {:style => 'width: 405px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :pi_email, :label => "Email", :input_html => {:style => 'width: 230px'} %>
@@ -26,7 +25,7 @@
     <%= f.input :ra, :label => "Right Ascension", :placeholder => "HH:MM:SS", :input_html => {:style => 'width: 135px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :dec, :label => "Declination", :placeholder => "DD:HH:MM", :input_html => {:style => 'width: 135px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :magnitude, :label => "Magnitude", :input_html => {:style => 'width: 100px'} %>
-    
+
     <p> </p>
     <p>Observing Summary</p>
     <%= f.input :observe_target, :label => "Target", :input_html => {:style => 'width: 235px'}, :wrapper_html=> {:style => 'float:left'} %>

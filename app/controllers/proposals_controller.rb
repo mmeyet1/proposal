@@ -2,11 +2,16 @@ class ProposalsController < ApplicationController
   # GET /proposals
   # GET /proposals.json
   def index
-    @proposals = Proposal.paginate(:per_page => 3, :page => params[:page])
+    @proposals = Proposal.paginate(:per_page => 3, :page => params[:page]).search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @proposals }
+      #format.json { render json: @proposals }
+      format.pdf do
+        render :pdf => "proposal_pdf", 
+               :layout => 'pdf', 
+               :show_as_html => params[:debug].present?
+      end
     end
   end
 
@@ -14,10 +19,13 @@ class ProposalsController < ApplicationController
   # GET /proposals/1.json
   def show
     @proposal = Proposal.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @proposal }
+      #format.json { render json: @proposal }
+      format.pdf do
+        render :pdf => "proposal", :template => "proposals/show"
+      end
     end
   end
 
@@ -25,11 +33,6 @@ class ProposalsController < ApplicationController
   # GET /proposals/new.json
   def new
     @proposal = Proposal.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @proposal }
-    end
   end
 
   # GET /proposals/1/edit

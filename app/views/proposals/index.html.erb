@@ -28,6 +28,10 @@
 <% end %>
 </tbody>
 </table>
+<%= form_tag proposals_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search by Instrument", :instrument => nil, class: 'btn btn-mini btn-primary' %>
+<% end %>
 <%= will_paginate @proposals%>
 </div>
 <br />
