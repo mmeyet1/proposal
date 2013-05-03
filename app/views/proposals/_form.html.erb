@@ -10,10 +10,18 @@
     <%= f.input :coi_email, :label => "Email", :input_html => {:style => 'width: 230px'} %>
     <%= f.input :coi_inst, :label => "Institute", :input_html => {:style => 'width: 405px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :coi_country, :label => "Country", :input_html => {:style => 'width: 230px'}, :prompt => "Select Country" %>
+    <div>
+    	<%= @proposal.addedcoi.build if @proposal.addedcoi.nil? %>
+    	<%= f.simple_fields_for :addedcoi do |addedcoi| %>
+    	  <%= render 'addedcoi_fields', :f => addedcoi %>
+    	<% end %>
+    	  <%= link_to_add_association 'Add Co-Investigator', f, :addedcoi, :class => 'btn-mini btn-primary' %>
+    </div>
+    <p>&nbsp;</p>
     <%= f.input :prop_category, :label => "Proposal Category", :collection => [ "GO","SNAP","AR","GO/DD"], :prompt => "none selected", :multiple => true, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :sci_category, :label => "Scientific Category", :collection => [ "AGN/QUASARS","COOL STARS","COSMOLOGY","DEBRIS DISKS","EXTRA-SOLAR PLANETS","HOT STARS","ISM AND CIRCUMSTELLAR MATTERISM IN EXTERNAL GALAXIES","QUASAR ABSORPTION LINES AND IGM","RESOLVED STAR FORMATION","RESOLVED STELLAR POPULATIONS","SOLAR SYSTEM","UNRESOLVED STAR FORMATION","UNRESOLVED STELLAR POPULATIONS AND GALAXY STRUCTURE"], :prompt => "none selected" %>
     <%= f.label :keywords %>
-    <%= f.select :keyword1, options_for_select(["AGN Physics","Asteroids","Astrometry","Atmosphere and Chromospheres","Binaries","Black Holes","Brown Dwarfs","Comets","Dark Matter","Disks","Dust","Evolution","Galatic Bulge","Galaxies","Gamma-Ray Bursts","Globular Cluster Systems","HII Region","Hubble Deep Fields","Jets","Magellanic Clouds","Molecular Clouds","Novae","Planets","Quasars","Stars","Stellar Activity","Supernovae","Survey","White Dwarfs"]), {}, :multiple => true, :class=> "chzn-select" %>   
+    <%= f.select :keyword1, options_for_select(["AGN Physics","Asteroids","Astrometry","Atmosphere and Chromospheres","Binaries","Black Holes","Brown Dwarfs","Comets","Dark Matter","Disks","Dust","Evolution","Galatic Bulge","Galaxies","Gamma-Ray Bursts","Globular Cluster Systems","HII Region","Hubble Deep Fields","Jets","Magellanic Clouds","Molecular Clouds","Novae","Planets","Quasars","Stars","Stellar Activity","Supernovae","Survey","White Dwarfs"]), {}, {:multiple => true, :include_blank => false, :class=> "chzn-select"} %>   
     <%= f.input :instrument, :label => "Instrument", :collection => [ "ACS", "COS", "FGS", "STIS", "WFC3"], :prompt => "none selected" %>
     <%= f.input :prop_period, :label => "Proprietary Period", :collection => 1..12, :prompt => "none selected" %>
     <%= f.input :prime_orb, :label => "Prime", :wrapper_html=> {:style => 'float:left'} %>
@@ -25,13 +33,27 @@
     <%= f.input :ra, :label => "Right Ascension", :placeholder => "HH:MM:SS", :input_html => {:style => 'width: 135px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :dec, :label => "Declination", :placeholder => "DD:HH:MM", :input_html => {:style => 'width: 135px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :magnitude, :label => "Magnitude", :input_html => {:style => 'width: 100px'} %>
-
-    <p> </p>
+    <div>
+        <%= @proposal.addedtarget.build if @proposal.addedtarget.nil? %>
+        <%= f.simple_fields_for :addedtarget do |addedtarget| %>
+          <%= render 'addedtarget_fields', :f => addedtarget %>
+        <% end %>
+          <%= link_to_add_association 'Add Target', f, :addedtarget, :class => 'btn-mini btn-primary' %>
+    </div>
+    <p>&nbsp;</p>
     <p>Observing Summary</p>
     <%= f.input :observe_target, :label => "Target", :input_html => {:style => 'width: 235px'}, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :flags, :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :observe_orb, :label => "Orbits" %>
     <%= f.input :config, :label => "Instrument Setup (Config, Mode, Spectral Element)", :input_html => {:style => 'width: 650px'} %>
+    <div>
+    	<%= @proposal.addedtargetdetail.build if @proposal.addedtargetdetail.nil? %>
+    	<%= f.simple_fields_for :addedtargetdetail do |addedtargetdetail| %>
+    	  <%= render 'addedtargetdetail_fields', :f => addedtargetdetail %>
+    	<% end %>
+    	  <%= link_to_add_association 'Add Target Details', f, :addedtargetdetail, :class => 'btn-mini btn-primary' %>
+    </div>
+    <p>&nbsp;</p>
     <%= f.input :sci_justify, :label => "Scientific Justification (maximum of 2000 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
     <%= f.input :description, :label => "Description of Observations (maximum of 1500 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>
     <%= f.input :special_req , :label => "Special Requirements (maximum of 500 words)", :input_html => { :class => 'autogrow', :rows => 5, :cols => 20, :style => 'width: 650px'} %>

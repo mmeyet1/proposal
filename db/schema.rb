@@ -11,7 +11,47 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426165124) do
+ActiveRecord::Schema.define(:version => 20130503044546) do
+
+  create_table "added_cois", :force => true do |t|
+    t.string   "addcoi_name"
+    t.string   "addcoi_inst"
+    t.string   "addcoi_country"
+    t.string   "addcoi_email"
+    t.integer  "proposal_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "addedcois", :force => true do |t|
+    t.string   "addcoi_name"
+    t.string   "addcoi_email"
+    t.string   "addcoi_inst"
+    t.string   "addcoi_country"
+    t.integer  "proposal_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "addedtargetdetails", :force => true do |t|
+    t.string   "addobserve_target"
+    t.string   "addconfig"
+    t.string   "addflags"
+    t.string   "addobserve_orb"
+    t.integer  "proposal_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "addedtargets", :force => true do |t|
+    t.string   "addtarget"
+    t.string   "addra"
+    t.string   "adddec"
+    t.string   "addmagnitude"
+    t.integer  "proposal_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "proposals", :force => true do |t|
     t.string   "title"

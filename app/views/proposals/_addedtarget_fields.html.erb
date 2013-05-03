@@ -1,0 +1,18 @@
+<div class ="nested-fields">
+<table>
+	<tr>
+		<td>Target</td>
+		<td>RA</td>
+		<td>Dec</td>
+		<td>Magnitude</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><%= f.text_field :addtarget, :style => "width: 235px;" %></td>
+		<td><%= f.text_field :addra, :style => "width: 135px;" %></td>
+		<td><%= f.text_field :adddec, :style => "width: 135px;" %></td>
+		<td><%= f.text_field :addmagnitude, :style => "width: 100px;" %></td>
+		<td><%= link_to_remove_association "Remove Target", f %></td>
+	</tr>
+</table>
+</div>

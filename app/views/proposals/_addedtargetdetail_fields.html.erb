@@ -1,0 +1,24 @@
+<div class ="nested-fields">
+<table>
+	<tr>
+		<td>Target</td>
+		<td>Flags</td>
+		<td>Orbits</td>
+	</tr>
+	<tr>
+		<td><%= f.text_field :addobserve_target, :style => "width: 235px;" %></td>
+		<td><%= f.text_field :addflags, :style => "width: 202px;" %></td>
+		<td><%= f.text_field :addobserve_orb, :style => "width: 180px;" %></td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td>Config Mode and Spectral Elements</td>
+		
+	</tr>
+	<tr>
+		<td><%= f.text_field :addconfig, :style => "width: 648px;" %></td>
+		<td><%= link_to_remove_association "Remove Target Details", f %></td>
+	</tr>
+</table>
+</div>

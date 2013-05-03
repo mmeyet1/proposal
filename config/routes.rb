@@ -1,5 +1,6 @@
 Rails3BootstrapDeviseCancan::Application.routes.draw do
   resources :proposals
+  resources :addedtarget
   
   authenticated :user do
     root :to => 'home#main'

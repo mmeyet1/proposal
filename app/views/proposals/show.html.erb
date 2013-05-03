@@ -84,10 +84,14 @@
   		<td width='250' align='left'><%= @proposal.coi_email %></td>
   		<td width='250' align='left'><%= @proposal.coi_country %></td>
   	</tr>
-  	<tr>
-  		<td>&nbsp;</td>
-  	</tr>
 </table>
+<%= @proposal.addedcoi.each do |a| %>
+<%= a.addcoi_name %>
+<%= a.addcoi_inst %>
+<%= a.addcoi_email %>
+<%= a.addcoi_country %>
+<br/>
+<% end %>
 <h4>Target Summary:</h4>
 <table>
 	<tr>
@@ -102,10 +106,19 @@
 		<td width='250' align='left'><%= @proposal.dec %></td>
 		<td width='250' align='left'><%= @proposal.magnitude %></td>
   	</tr>
-  	<tr>
-  		<td>&nbsp;</td>
+	<tr>
+		&nbsp;
   	</tr>
 </table>
+
+<%= @proposal.addedtarget.each do |a| %>
+<%= a.addtarget %>
+<%= a.addra %>
+<%= a.adddec %>
+<%= a.addmagnitude %>
+<br/>
+<% end %>
+
 <h4>Observing Summary:</h4>
 <table>
 	<tr>
@@ -121,6 +134,13 @@
 		<td width='250' align='left'><%= @proposal.observe_orb %>
 	</tr>
 </table>
+<%= @proposal.addedtargetdetail.each do |a| %>
+<%= a.addobserve_target %>
+<%= a.addconfig %>
+<%= a.addflags %>
+<%= a.addobserve_orb %>
+<br/>
+<% end %>
 <h4></h4>
 <table>
 	<tr>
@@ -166,6 +186,5 @@
 
 
 <%= link_to 'Edit', edit_proposal_path(@proposal), :class => 'btn btn-warning' %> |
-<%= link_to 'Back', proposals_path, :class => 'btn btn-warning' %> | 
 <%= link_to "Create PDF", url_for(request.params.merge(:format => :pdf)), :class => 'btn btn-primary' %> 
    

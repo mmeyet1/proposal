@@ -1,0 +1,21 @@
+<div class ="nested-fields">
+<table>
+	<tr>
+		<td>Co-Investigator Name</td>
+		<td>Email</td>
+	</tr>
+	<tr>
+		<td><%= f.text_field :addcoi_name, :style => "width: 405px;" %></td>
+		<td><%= f.text_field :addcoi_email, :style => "width: 227px;" %></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Institute</td>
+		<td>Country</td>
+	</tr>
+		<td><%= f.text_field :addcoi_inst, :style => "width: 405px;" %></td>
+		<td><%= f.text_field :addcoi_country, :style => "width: 215px;" %></td>
+		<td><%= link_to_remove_association "Remove Co-Investigator", f %></td>
+	</tr>
+</table>
+</div>
