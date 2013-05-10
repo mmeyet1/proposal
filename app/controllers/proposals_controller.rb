@@ -2,7 +2,7 @@ class ProposalsController < ApplicationController
   # GET /proposals
   # GET /proposals.json
   def index
-    @proposals = Proposal.paginate(:per_page => 3, :page => params[:page]).search(params[:search])
+    @proposals = Proposal.paginate(:per_page => 4, :page => params[:page]).search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -82,5 +82,14 @@ class ProposalsController < ApplicationController
       format.html { redirect_to proposals_url }
       format.json { head :no_content }
     end
+  end
+  
+  def clean_select_multiple_params hash = params
+  hash.each do |k, v|
+    case v
+    when Array then v.reject!(&:blank?)
+    when Hash then clean_select_multiple_params(v)
+    end
+  end
   end
 end

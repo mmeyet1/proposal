@@ -85,13 +85,17 @@
   		<td width='250' align='left'><%= @proposal.coi_country %></td>
   	</tr>
 </table>
-<%= @proposal.addedcoi.each do |a| %>
-<%= a.addcoi_name %>
-<%= a.addcoi_inst %>
-<%= a.addcoi_email %>
-<%= a.addcoi_country %>
-<br/>
+<table>
+	<tr>
+		<%= @proposal.addedcoi.each do |a| %>
+        <td width='250' align='left'><%= a.addcoi_name %>
+        <td width='250' align='left'><%= a.addcoi_inst %>
+        <td width='250' align='left'><%= a.addcoi_email %>
+        <td width='250' align='left'><%= a.addcoi_country %>
+	</tr>
+</table>
 <% end %>
+<br/>
 <h4>Target Summary:</h4>
 <table>
 	<tr>
@@ -110,15 +114,17 @@
 		&nbsp;
   	</tr>
 </table>
-
-<%= @proposal.addedtarget.each do |a| %>
-<%= a.addtarget %>
-<%= a.addra %>
-<%= a.adddec %>
-<%= a.addmagnitude %>
-<br/>
+<table>
+	<tr>
+    <%= @proposal.addedtarget.each do |a| %>
+    <td width='250' align='left'><%= a.addtarget %>
+    <td width='250' align='left'><%= a.addra %>
+    <td width='250' align='left'><%= a.adddec %>
+    <td width='250' align='left'><%= a.addmagnitude %>
+    </tr>
+</table>
 <% end %>
-
+<br/>
 <h4>Observing Summary:</h4>
 <table>
 	<tr>
@@ -134,13 +140,17 @@
 		<td width='250' align='left'><%= @proposal.observe_orb %>
 	</tr>
 </table>
-<%= @proposal.addedtargetdetail.each do |a| %>
-<%= a.addobserve_target %>
-<%= a.addconfig %>
-<%= a.addflags %>
-<%= a.addobserve_orb %>
-<br/>
+<table>
+	<tr>
+    <%= @proposal.addedtargetdetail.each do |a| %>
+    <td width='250' align='left'><%= a.addobserve_target %>
+    <td width='250' align='left'><%= a.addconfig %>
+    <td width='250' align='left'><%= a.addflags %>
+    <td width='250' align='left'><%= a.addobserve_orb %>
+    </tr>
+</table>
 <% end %>
+<br/>
 <h4></h4>
 <table>
 	<tr>

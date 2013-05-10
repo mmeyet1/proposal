@@ -11,7 +11,7 @@ class CreateProposals < ActiveRecord::Migration
       t.string :prop_category
       t.string :sci_category
       t.string :keyword1
-      t.string :keyword2
+      t.text :keyword2
       t.string :keyword3
       t.string :instrument
       t.integer :prop_period
