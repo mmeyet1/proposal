@@ -12,7 +12,12 @@ class Proposal < ActiveRecord::Base
   :adddec, :addmagnitude, :addra, :addtarget, :addedtarget_attributes, :addcoi_name, :addcoi_inst, :addcoi_email, :addcoi_country, :addedcoi_attributes, :addobserve_target, :addconfig, :addflags, :addobserve_orb,
   :addedtargetdetail_attributes
  
-  validates_presence_of :title, :pi_email, :pi_inst, :pi_name, :prop_category, :sci_category, :instrument, :prop_period, :cycle, :prime_orb, :abstract, :target, :ra, :dec, :magnitude, :observe_target, :config, :observe_orb, :sci_justify, :description 
+  validates_presence_of :title, :pi_email, :pi_inst, :pi_name, :prop_category, :sci_category, :instrument, :prop_period, :cycle, :prime_orb, :abstract, :target, :ra, :dec, :magnitude, :observe_target, :config, :observe_orb, :sci_justify, :description, :keyword1 
+  validates :keyword1, :length => {
+    :maximum => 4,
+    :tokenizer => lambda { |str| str.scan(/\w+/) },
+    :too_long => "Please limit your maximum word choice to 3 words"
+  }
   validates :sci_justify, :length => {
     :maximum => 2000,
     :tokenizer => lambda { |str| str.scan(/\w+/) },
