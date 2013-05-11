@@ -1,5 +1,5 @@
 <img src="/stsci.jpg" alt="stsci feed" align="left" /></br>
-<%= link_to "Proposal Submission System", root_path, :class => 'brand', :color => 'red' %>
+<%= link_to "Proposal Submission System", root_path, :class => 'brand', :style=>'color:#0101DF;' %>
     
 <ul class="nav">
   <% if user_signed_in? %>
@@ -9,8 +9,8 @@
   <% else %>
     <li>
     <center>Welcome, Guest.  <br> To submit a Proposal, 
-    	<br>Please <%= link_to 'login', new_user_session_path %>
-    or <%=link_to 'register.', new_user_registration_path %></center>
+    	<br>Please <b><%= link_to 'LOGIN', new_user_session_path, {:style=>'color:#FFBF00;'} %></b>
+    or<b> <%=link_to 'REGISTER', new_user_registration_path, {:style=>'color:#FFBF00;'} %></b></center>
     </li>
   <% end %>
   <% if user_signed_in? %>

@@ -11,10 +11,10 @@
 	</tr>
 	<tr>
 		<td>Institute</td>
-		<td>Country</td>
+		<td></td>
 	</tr>
 		<td><%= f.text_field :addcoi_inst, :style => "width: 405px;" %></td>
-		<td><%= f.text_field :addcoi_country, :style => "width: 215px;" %></td>
+		<td><%= f.input :addcoi_country, :label => "Country", :input_html => {:style => 'width: 215px'}, :prompt => "Select Country" %></td>
 		<td><%= link_to_remove_association "Remove Co-Investigator", f %></td>
 	</tr>
 </table>

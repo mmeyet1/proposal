@@ -8,9 +8,9 @@
 <br>Government agencies.
 <br>
 <p>Full details are made available through two documents, the 
-	<u><b><%=link_to "Call for Proposals", cp_path %></b></u>, which 
+	<u><b><%=link_to "Call for Proposals", cp_path, {:style=>'color:#FF0040;'} %></b></u>, which 
 	<br>describes the policies and procedures for submitting a HST Phase I proposal and the 
-	<br><u><b><%= link_to "HST Primer", primer_path %></b></u>,which provides an introductory 
+	<br><u><b><%= link_to "HST Primer", primer_path, {:style=>'color:#FF0040;'} %></b></u>,which provides an introductory 
 	overview of the Hubble Space Telescope 
 	<br>and explains how to calculate the appropriate number of orbits for an observing proposal. 
 	</br>
@@ -22,5 +22,6 @@
 	<h4>Welcome, <%= current_user.name %></h4>
 
 	<%= link_to 'Create New Proposal', new_proposal_path, :class => 'btn btn-warning' %>
+
 <% end %>
 </p>

@@ -15,3 +15,9 @@ jQuery ->
     event.preventDefault()
     
   $('select option:empty').remove();
+  
+  $("select").on("click", "option", function () {
+    if ( 3 <= $(this).siblings(":selected").length ) {
+        $(this).removeAttr("selected");
+    }
+  });

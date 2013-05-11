@@ -14,4 +14,6 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   match "primer", :to => "home#primer"
   
   get "home/main"
+  get "propsals/show"
+  post "proposals/show"
 end

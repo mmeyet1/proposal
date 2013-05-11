@@ -1,3 +1,5 @@
+<% if current_user.has_role? :admin %> 
+      
 <h3>List of Submitted Proposals</h3>
 <div class="span12">
 <table class="table table-condensed">
@@ -35,5 +37,5 @@
 <%= will_paginate @proposals%>
 </div>
 <br />
-
+ <% end %>
 <!--<%= link_to 'New Proposal', new_proposal_path %>-->
