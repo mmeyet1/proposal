@@ -13,6 +13,8 @@ class Proposal < ActiveRecord::Base
   :addedtargetdetail_attributes
  
   validates_presence_of :title, :pi_email, :pi_inst, :pi_name, :prop_category, :sci_category, :instrument, :prop_period, :cycle, :prime_orb, :abstract, :target, :ra, :dec, :magnitude, :observe_target, :config, :observe_orb, :sci_justify, :description, :keyword1 
+  validates :pi_email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create }
+  
   validates :keyword1, :length => {
     :maximum => 4,
     :tokenizer => lambda { |str| str.scan(/\w+/) },

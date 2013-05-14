@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :role_ids, :as => :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :tos
   
-  validates_acceptance_of :tos
+  validates :tos, :acceptance => true
   
   def self.search(search)
     if search

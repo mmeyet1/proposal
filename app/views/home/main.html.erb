@@ -1,22 +1,36 @@
 <h3>Hubble Space Telescope Proposing Overview</h3>
 
 <p>NASA and The Space Telescope Science Institute (STScI) are pleased to announce the 
-<br>Cycle 21 Call for Proposals for Hubble Space Telescope (HST) Observations and funding
-<br>for Archival Research and Theoretical Research programs.  Participation in this program
-<br>is open to all categories of organizations, both domestic and foreign, including
-<br>educational institutions, profit and nonprofit organizations, NASA Centers, and other
-<br>Government agencies.
-<br>
+Cycle 21 Call for Proposals for Hubble Space Telescope (HST) Observations and funding
+for Archival Research and Theoretical Research programs.  Participation in this program
+is open to all categories of organizations, both domestic and foreign, including
+educational institutions, profit and nonprofit organizations, NASA Centers, and other
+Government agencies.
+</p>
 <p>Full details are made available through two documents, the 
 	<u><b><%=link_to "Call for Proposals", cp_path, {:style=>'color:#FF0040;'} %></b></u>, which 
-	<br>describes the policies and procedures for submitting a HST Phase I proposal and the 
-	<br><u><b><%= link_to "HST Primer", primer_path, {:style=>'color:#FF0040;'} %></b></u>,which provides an introductory 
+	describes the policies and procedures for submitting a HST Phase I proposal and the 
+	<u><b><%= link_to "HST Primer", primer_path, {:style=>'color:#FF0040;'} %></b></u>,which provides an introductory 
 	overview of the Hubble Space Telescope 
-	<br>and explains how to calculate the appropriate number of orbits for an observing proposal. 
-	</br>
+	and explains how to calculate the appropriate number of orbits for an observing proposal. 
+	</p>
 <p>
-<p>Questions can be addressed to the STScI Help Desk 
-	(email: help@stsci.edu; phone: 410-338-1082).</p>
+<p>A Phase I proposal provides:
+<p>
+<ul><li>A summary of the observing program.</li>
+    <li>The scientific justifications for the program.</li>
+    <li>A list of targets with their celestial coordinates.</li>
+    <li>The instrument(s) to be used with desired modes, filters, and dispersers.</li>
+    <li>An estimate of the number of spacecraft orbits needed to accomplish the observing 
+    	program (a means to calculate this number is provided in the Phase I instructions).</li>
+</ul>
+<p>Proposers should consult all relevant technical documentation about the capabilities and 
+	sensitivities of the instrument(s) to be used in their programs and should discuss the 
+	requirements of their observing programs with appropriate STScI experts. Contacts are provided 
+	via the STScI HelpDesk at <b>(email: help@stsci.edu; phone: 410-338-1082)</b>. To avoid duplication conflicts proposers also should 
+	consult up-to-date exposure catalogs, available on-line at the 
+	<%= link_to "STScI Web site", "http://www.stsci.edu", {:style=>'color:#FF0040;'} %>.
+</p>
 	<% if user_signed_in? %>
 	
 	<h4>Welcome, <%= current_user.name %></h4>
