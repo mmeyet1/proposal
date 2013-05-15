@@ -1,4 +1,5 @@
 class Proposal < ActiveRecord::Base
+  belongs_to :user
   has_many :addedtarget
   has_many :addedcoi
   has_many :addedtargetdetail

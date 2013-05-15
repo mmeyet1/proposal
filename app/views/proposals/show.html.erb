@@ -28,7 +28,7 @@
   	</tr>
   	<tr>
   		<td align='right'>Scientific Keywords:&nbsp;</td>
-  		<td><%= @proposal.keyword1[1..3] %></td>
+  		<td><%= @proposal.keyword1[1..3].join(', ') %></td>
   		
   	</tr>
   	<tr>
@@ -88,7 +88,7 @@
 </table>
 <table>
 	<tr>
-		<%= @proposal.addedcoi.each do |a| %>
+		<%- @proposal.addedcoi.each do |a| %>
         <td width='250' align='left'><%= a.addcoi_name %>
         <td width='250' align='left'><%= a.addcoi_inst %>
         <td width='250' align='left'><%= a.addcoi_email %>
@@ -117,7 +117,7 @@
 </table>
 <table>
 	<tr>
-    <%= @proposal.addedtarget.each do |a| %>
+    <%- @proposal.addedtarget.each do |a| %>
     <td width='250' align='left'><%= a.addtarget %>
     <td width='250' align='left'><%= a.addra %>
     <td width='250' align='left'><%= a.adddec %>
@@ -143,7 +143,7 @@
 </table>
 <table>
 	<tr>
-    <%= @proposal.addedtargetdetail.each do |a| %>
+    <%- @proposal.addedtargetdetail.each do |a| %>
     <td width='250' align='left'><%= a.addobserve_target %>
     <td width='250' align='left'><%= a.addconfig %>
     <td width='250' align='left'><%= a.addflags %>

@@ -7,7 +7,9 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   end
   root :to => "home#main"
   devise_for :users
-  resources :users
+  resources :users do 
+    resources :proposals
+  end
   
   match "tos", :to => "home#tos"
   match "cp", :to => "home#cp"
