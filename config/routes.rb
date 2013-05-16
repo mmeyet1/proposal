@@ -22,5 +22,5 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   get "proposals/show"
   post "proposals/show"
   get "proposals/archive"
-  post "proposal/archive"
+  post "proposals/archive"
 end

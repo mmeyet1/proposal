@@ -22,7 +22,7 @@
     <%= f.input :sci_category, :label => "Scientific Category", :collection => [ "AGN/QUASARS","COOL STARS","COSMOLOGY","DEBRIS DISKS","EXTRA-SOLAR PLANETS","HOT STARS","ISM AND CIRCUMSTELLAR MATTERISM IN EXTERNAL GALAXIES","QUASAR ABSORPTION LINES AND IGM","RESOLVED STAR FORMATION","RESOLVED STELLAR POPULATIONS","SOLAR SYSTEM","UNRESOLVED STAR FORMATION","UNRESOLVED STELLAR POPULATIONS AND GALAXY STRUCTURE"], :prompt => "none selected" %>
     <%= f.input :keyword1, :label => "Keywords (choose up to 3)", :collection => (["AGN Physics","Asteroids","Astrometry","Atmosphere and Chromospheres","Binaries","Black Holes","Brown Dwarfs","Comets","Dark Matter","Disks","Dust","Evolution","Galatic Bulge","Galaxies","Gamma-Ray Bursts","Globular Cluster Systems","HII Region","Hubble Deep Fields","Jets","Magellanic Clouds","Molecular Clouds","Novae","Planets","Quasars","Stars","Stellar Activity","Supernovae","Survey","White Dwarfs"]), :input_html => { :multiple => true } %>   
     <%= f.input :instrument, :label => "Instrument", :collection => [ "ACS", "ACS/WFC3", "COS", "FGS", "STIS", "WFC3", "WFC3/ACS"], :prompt => "none selected" %>
-    <%= f.input :prop_period, :label => "Proprietary Period", :collection => 1..12, :prompt => "none selected" %>
+    <%= f.input :prop_period, :label => "Proprietary Period", :collection => 0..12, :prompt => "none selected" %>
     <%= f.input :prime_orb, :label => "Prime", :wrapper_html=> {:style => 'float:left'} %>
     <%= f.input :par_orb, :label => "Parallel" %>
     <%= f.input :cycle, :label => "Cycle", :collection => 21..23, :prompt => "none selected" %>

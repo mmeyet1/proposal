@@ -1,7 +1,7 @@
 class ProposalsController < ApplicationController
   # GET /proposals
   # GET /proposals.json
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!
   
   def index
     @proposals = Proposal.paginate(:per_page => 4, :page => params[:page]).search(params[:search])
