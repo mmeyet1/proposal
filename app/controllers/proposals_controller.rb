@@ -1,9 +1,11 @@
 class ProposalsController < ApplicationController
   # GET /proposals
   # GET /proposals.json
+  before_filter :authenticate_user!, :except => [:show, :index]
+  
   def index
     @proposals = Proposal.paginate(:per_page => 4, :page => params[:page]).search(params[:search])
-
+    
     respond_to do |format|
       format.html # index.html.erb
       #format.json { render json: @proposals }
@@ -29,6 +31,16 @@ class ProposalsController < ApplicationController
     end
   end
 
+  def archive
+    @proposal = Proposal.find(params[:id])
+    @user = Proposal.user
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @proposals }
+    end
+  end
+  
   # GET /proposals/new
   # GET /proposals/new.json
   def new

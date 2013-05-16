@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503044546) do
+ActiveRecord::Schema.define(:version => 20130515233946) do
 
   create_table "added_cois", :force => true do |t|
     t.string   "addcoi_name"
@@ -91,6 +91,8 @@ ActiveRecord::Schema.define(:version => 20130503044546) do
     t.binary   "prop_pdf"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "user_id"
+    t.integer  "proposal_id"
   end
 
   create_table "roles", :force => true do |t|
